@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { db } from '../firebase'
+import SendMessage from './SendMessage'
 import SignOut from './SignOut'
 
 function Chat() {
@@ -8,8 +9,8 @@ function Chat() {
     db.collection('messages')
       .orderBy('createdAt')
       .limit(50)
-      .onSnapshot((snapshot) => {
-        setMessages(snapshot.docs.map((doc) => doc.data()))
+      .onSnapshot(snapshot => {
+        setMessages(snapshot.docs.map(doc => doc.data()))
       })
   }, [])
 
@@ -22,6 +23,7 @@ function Chat() {
           <p>{text}</p>
         </div>
       ))}
+      <SendMessage/>
     </div>
   )
 }
