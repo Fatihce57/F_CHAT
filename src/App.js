@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import SignIn from './components/SignIn'
 import Chat from './components/Chat'
 import { auth } from './firebase'
@@ -10,7 +10,7 @@ function App() {
     <>
       {user ? <Chat /> : <SignIn />}
     </>
-  );
+  )
 }
 
-export default App;
+export default App

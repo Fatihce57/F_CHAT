@@ -14,9 +14,9 @@ function Chat() {
         setMessages(snapshot.docs.map((doc) => doc.data()))
       })
   }, [])
-
   return (
     <div>
+    <div className="chat-page">
       <SignOut />
       <div className="msgs">
         {messages.map(({ id, text, photoURL, uid }) => (
@@ -27,14 +27,15 @@ function Chat() {
                 uid === auth.currentUser.uid ? 'sent' : 'received'
               }`}
             >
-              <img src={photoURL} alt="" />
-              <p>{text}</p>
+              <img className="photo" src={photoURL} alt="photo" />
+              <p className="text">{text}</p>
             </div>
           </div>
         ))}
       </div>
       <SendMessage scroll={scroll} />
       <div ref={scroll}></div>
+    </div>
     </div>
   )
 }
