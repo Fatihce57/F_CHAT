@@ -2,7 +2,6 @@ import React from 'react'
 import firebase from 'firebase'
 import { auth } from '../firebase.js'
 import { Button } from '@material-ui/core'
-import { Container, Row, Col } from 'react-bootstrap'
 
 function SignIn() {
     function signInWithGoogle() {

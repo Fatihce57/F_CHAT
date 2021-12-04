@@ -4,53 +4,41 @@ import firebase from 'firebase'
 import { db, auth } from '../firebase'
 
 function SendMessage({ scroll }) {
-  const [message, setMessage] = useState('')
+    const [message, setMessage] = useState('')
 
-  async function sendMessage(e) {
-    e.preventDefault()
-    const { uid, photoURL } = auth.currentUser
+    async function sendMessage(e) {
+        e.preventDefault()
+        const { uid, photoURL } = auth.currentUser
 
-    await db.collection('messages').add({
-      text: message,
-      photoURL,
-      uid,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    })
-    setMessage('')
-    scroll.current.scrollIntoView({ behavior: 'smooth' })
-  }
+        await db.collection('messages').add({
+            text: message,
+            photoURL,
+            uid,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        })
+        setMessage('')
+        scroll.current.scrollIntoView({ behavior: 'smooth' })
+    }
 
-  return (
-      <form onSubmit={sendMessage}>
-        <div className="sendMsg">
-          <Input
-            style={{
-               width: '36rem',
-               fontSize: '18px',
-               fontWeight: '550',
-               marginLeft: '40px',
-       
-            }}
-            placeholder="Message..."
-            type="text"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <Button
-            style={{
-            
-               fontSize: '15px',
-               fontWeight: '550',
-               margin: '4px 5% -13px 5%',
-               maxWidth: '200px',
-            }}
-            type="submit"
-          >
-            Send
-          </Button>
-        </div>
-      </form>
-  )
+    return (
+        <form onSubmit={sendMessage}>
+            <div className="sendMsg">
+                <Input
+                    className="input"
+                    placeholder="Message..."
+                    type="text"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
+                <Button
+                    className="send-button"
+                    type="submit"
+                >
+                    Send
+                </Button>
+            </div>
+        </form>
+    )
 }
 
 export default SendMessage

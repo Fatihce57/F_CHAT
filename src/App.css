@@ -56,8 +56,22 @@
   border-radius: 3000px;
 }
 
+.input {
+  width: 35rem;
+  font-size: 18px;
+  font-weight: 550;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.send-button {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 2% 0 0 0;
+}
+
 .msgs {
-  margin: 110px 0;
+  margin: 10% 0;
   display: flex;
   flex-direction: column;
 }
@@ -111,15 +125,15 @@
 }
 
 .chat-bg {
-    background: url('./assets/chat-bg.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    width: 50rem;
-    height: 50rem;
-    border-radius: 5%;
-    border: 5px solid rgb(177, 17, 17);
-    overflow: auto;
-  }
+  background: url('./assets/chat-bg.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 5%;
+  border: 5px solid rgb(177, 17, 17);
+  overflow: auto;
+}
 
 .chat-border {
   background-color: rgb(146, 211, 241);
@@ -127,7 +141,9 @@
   height: 50rem;
   border-radius: 5%;
   border: 5px solid rgb(177, 17, 17);
-  overflow: auto;
+  overflow: auto;    
+  font-size: 15px;
+  font-weight: 550;
 }
 
 ::-webkit-scrollbar {
@@ -143,8 +159,8 @@
   z-index: 100;
 }
 
-/* @media (max-width: 775px) {
-  p {
+@media (max-width: 775px) {
+  .text {
     font-size: 20px;
   }
   .sent {
@@ -153,14 +169,14 @@
   .received {
     padding: 10px 10px 0 10px;
   }
-  img {
+  .photo {
     height: 35px;
     margin-top: -10px;
   }
 }
 
 @media (max-width: 500px) {
-  p {
+  .text {
     font-size: 15px;
   }
   .sent {
@@ -169,8 +185,20 @@
   .received {
     padding: 7px 7px 0 7px;
   }
-  img {
+  .photo {
     height: 30px;
     margin-top: -7px;
   }
-} */
+  .sendMsg {
+    width: 98%;
+  }
+  .input {
+    width: 10rem;
+  }
+  .send-button {
+    margin: 15% 0 0 0;
+  }
+  .chat-border{
+      border-radius: 0;
+  }
+}
