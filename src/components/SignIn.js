@@ -12,8 +12,7 @@ function SignIn() {
 
     return (
         <div className="sign-page">
-            <div className="chat-border">
-                
+            <div className="chat-bg">                
                     <h1 className="header">FC CHAT</h1>
                     <div className="logoo"><img className="logo" src="./logo.png" alt="logo" /></div>
                     <div className="button-signIn">

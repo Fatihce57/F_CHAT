@@ -15,9 +15,9 @@ function Chat() {
       })
   }, [])
   return (
-    <div>
-    <div className="chat-page">
-      <SignOut />
+    <div className="chat-page ">
+    <div className="chat-border">
+    <span className="chat-header"> <SignOut/><h1>FC CHAT</h1> <img className="logo" src="./logo.png" alt="logo" /></span>
       <div className="msgs">
         {messages.map(({ id, text, photoURL, uid }) => (
           <div>
