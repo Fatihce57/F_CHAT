@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { db, auth } from '../firebase'
 import SendMessage from './SendMessage'
 import SignOut from './SignOut'
+import { Button } from '@material-ui/core'
 
 function Chat() {
   const scroll = useRef()
@@ -28,7 +29,7 @@ function Chat() {
               }`}
             >
               <img className="photo" src={photoURL} alt="photo" />
-              <p className="text">{text}</p>
+              <p className="text">{text}</p><Button className="delete-button">x</Button>
             </div>
           </div>
         ))}
