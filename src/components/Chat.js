@@ -6,7 +6,8 @@ import { Button } from '@material-ui/core'
 
 function Chat() {
   const scroll = useRef()
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([]);
+
   useEffect(() => {
     db.collection('messages')
       .orderBy('createdAt')
@@ -16,13 +17,6 @@ function Chat() {
       })
   }, [])
 
-  const [list, setList] = useState(messages);
-
-  function handleRemove(id) {
-    const newList = messages.filter((item) => item.id !== id);
-
-    setMessages(newList);
-  }
   return (
     <div className="chat-page ">
       <div className="chat-border">
@@ -35,14 +29,12 @@ function Chat() {
             <div>
               <div
                 key={id}
-                className={`msg ${
-                  uid === auth.currentUser.uid ? 'sent' : 'received'
-                }`}
+                className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'
+                  }`}
               >
                 <img className="photo" src={photoURL} alt="photo" />
                 <p className="text">{text}</p>
-                <Button
-                onClick={() => handleRemove(id)}
+                {/* <Button               
                   className="delete-button"
                   style={{
                     marginTop: '-35px',
@@ -52,9 +44,9 @@ function Chat() {
                   }}
                 >
                   x
-                </Button>
+                </Button> */}
               </div>
-              
+
             </div>
           ))}
         </div>

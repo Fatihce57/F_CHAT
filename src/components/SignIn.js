@@ -11,24 +11,24 @@ function SignIn() {
 
     return (
         <div className="sign-page">
-            <div className="chat-bg">                
-                    <h1 className="header">FC CHAT</h1>
-                    <div className="logoo"><img className="logo" src="./logo.png" alt="logo" /></div>
-                    <div className="button-signIn">
-                        <Button
+            <div className="chat-bg">
+                <h1 className="header">FC CHAT</h1>
+                <div className="logoo"><img className="logo" src="./logo.png" alt="logo" /></div>
+                <div className="button-signIn">
+                    <Button
                         style={{
                             padding: '30px',
                             fontSize: '20px',
                             borderRadius: '0',
-                            fontWeight: '600', 
-                            color: 'white',                    
+                            fontWeight: '600',
+                            color: 'white',
                         }}
                         onClick={signInWithGoogle}
                     >
                         Sign In With Google
                     </Button></div>
-                    
-          
+
+
             </div>
         </div>
     )

@@ -6,16 +6,15 @@ function SignOut() {
     return (
         <Button
             style={{
-                padding: '10px',
-                fontSize: '16px',
-                fontWeight: '600',
-                fontColor: 'white'
+                padding: '8px',
+                fontSize: '14px',
+                fontWeight: '500',
+                width: '6rem',
             }}
             onClick={() => auth.signOut()}
         >
             Sign Out
         </Button>
-
     )
 }
 

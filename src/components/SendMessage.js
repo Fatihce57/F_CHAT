@@ -3,7 +3,7 @@ import { Button, Input } from '@material-ui/core'
 import firebase from 'firebase'
 import { db, auth } from '../firebase'
 
-function SendMessage({ scroll }) {
+function SendMessage({ scroll, onSubmit }) {
     const [message, setMessage] = useState('')
 
     async function sendMessage(e) {
@@ -31,6 +31,12 @@ function SendMessage({ scroll }) {
                     onChange={(e) => setMessage(e.target.value)}
                 />
                 <Button
+                    style={{
+                        fontSize: "15px",
+                        color: "red",
+                        fontWeight: "bold",
+                        padding: "3% 0 0 0"
+                    }}
                     className="send-button"
                     type="submit"
                 >
