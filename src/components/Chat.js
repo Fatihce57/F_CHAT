@@ -15,28 +15,52 @@ function Chat() {
         setMessages(snapshot.docs.map((doc) => doc.data()))
       })
   }, [])
+
+  const [list, setList] = useState(messages);
+
+  function handleRemove(id) {
+    const newList = messages.filter((item) => item.id !== id);
+
+    setMessages(newList);
+  }
   return (
     <div className="chat-page ">
-    <div className="chat-border">
-    <span className="chat-header"> <SignOut/><h1>FC CHAT</h1> <img className="logo" src="./logo.png" alt="logo" /></span>
-      <div className="msgs">
-        {messages.map(({ id, text, photoURL, uid }) => (
-          <div>
-            <div
-              key={id}
-              className={`msg ${
-                uid === auth.currentUser.uid ? 'sent' : 'received'
-              }`}
-            >
-              <img className="photo" src={photoURL} alt="photo" />
-              <p className="text">{text}</p><Button className="delete-button">x</Button>
+      <div className="chat-border">
+        <span className="chat-header">
+          <SignOut />
+          <h1>FC CHAT</h1> <img className="logo" src="./logo.png" alt="logo" />
+        </span>
+        <div className="msgs">
+          {messages.map(({ id, text, photoURL, uid }) => (
+            <div>
+              <div
+                key={id}
+                className={`msg ${
+                  uid === auth.currentUser.uid ? 'sent' : 'received'
+                }`}
+              >
+                <img className="photo" src={photoURL} alt="photo" />
+                <p className="text">{text}</p>
+                <Button
+                onClick={() => handleRemove(id)}
+                  className="delete-button"
+                  style={{
+                    marginTop: '-35px',
+                    color: 'red',
+                    borderRadius: '50%',
+                    fontSize:'15px'
+                  }}
+                >
+                  x
+                </Button>
+              </div>
+              
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <SendMessage scroll={scroll} />
+        <div ref={scroll}></div>
       </div>
-      <SendMessage scroll={scroll} />
-      <div ref={scroll}></div>
-    </div>
     </div>
   )
 }
