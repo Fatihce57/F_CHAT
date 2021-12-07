@@ -112,7 +112,7 @@
   height: 5rem;
   display: flex;
   justify-content: center;
-  margin-top: 23rem;
+  margin-top: 25rem;
 }
 
 .chat-page {
@@ -129,11 +129,10 @@
   background: url('./assets/chat-bg.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 40rem;
-  height: 100%;
+  width: 50rem;
+  height: 50rem;
   border-radius: 5%;
   border: 5px solid rgb(177, 17, 17);
-  overflow: auto;
 }
 
 .chat-border {
@@ -211,6 +210,8 @@
     margin-top: 2rem;
   }
   .chat-bg {
+    width: 50rem;
+    height: 100%;
     border-radius: 0;
     border: none;
   }
